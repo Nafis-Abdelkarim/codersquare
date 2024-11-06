@@ -2,15 +2,12 @@ import { RequestHandler } from "express";
 import { db } from "../datastore";
 import { ExpressHandler, Post } from "../types";
 import crypto from "crypto";
+import { CreatePostRequest, CreatePostResponse, ListPostRequest, ListPostResponse } from "../api";
 
 
-export const listPostHandler : RequestHandler<{},{}> = (req, res) => {
+export const listPostHandler : RequestHandler<ListPostRequest,ListPostResponse> = (req, res) => {
     res.send({posts: db.listPosts()});
 };
-
-type CreatePostRequest = Pick<Post, "title" | "url" | "userId">;
-
-interface CreatePostResponse {}
 
 export const createPostHandler: ExpressHandler<CreatePostRequest, CreatePostResponse> = (req, res) => {
     if (!req.body.title || !req.body.url || !req.body.userId) {
@@ -18,6 +15,10 @@ export const createPostHandler: ExpressHandler<CreatePostRequest, CreatePostResp
         return;
     }
 
+    //TODO: validate user exists
+    //TODO: get User Id from session
+    //TODO: validate title and url are non-empty
+    //TODO: validate url is new, otherwise add +1 to existing post
     const post: Post = {
         id: crypto.randomUUID(),
         title: req.body.title,
