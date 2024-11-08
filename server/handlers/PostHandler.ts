@@ -5,8 +5,8 @@ import crypto from "crypto";
 import { CreatePostRequest, CreatePostResponse, ListPostRequest, ListPostResponse } from "../api";
 
 
-export const listPostHandler : RequestHandler<ListPostRequest,ListPostResponse> = (req, res) => {
-    res.send({posts: db.listPosts()});
+export const listPostHandler : RequestHandler<ListPostRequest,ListPostResponse> = async (req, res) => {
+    res.send({posts: await db.listPosts()});
 };
 
 export const createPostHandler: ExpressHandler<CreatePostRequest, CreatePostResponse> = (req, res) => {
