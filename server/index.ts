@@ -1,6 +1,11 @@
 import express, { ErrorRequestHandler, RequestHandler } from 'express'
 import { createPostHandler, listPostHandler } from './handlers/PostHandler'
 import asyncHandler from 'express-async-handler'
+import { initDb } from './datastore'
+
+(async ()=>{
+
+await initDb();
 
 const app = express();
 
@@ -28,3 +33,5 @@ app.use(errorHandler);
 
 
 app.listen(3000);
+
+})()
