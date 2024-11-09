@@ -1,6 +1,5 @@
-# codersquare
-Codersquare is a simple platforme for developers to share links and helpfull content between the community 
+Codersquare is a simple platform for developers to share links and helpful content with the community.
 
-while building codersquare i will learn and take the process of building a full stack web app and take it's from inception to production !!!
-it's inspiered from bash mohandes [Yasser Elsayed]([https://www.google.com](https://www.linkedin.com/in/yelsayedebrahim/)) 
-[playlist's on youtube: ]([https://youtube.com/playlist?list=PL9ExMy1CBZjmRw0JcocbXKdy271BvWBGq&si=K107RGvRUFmp0UFs])
+Through building Codersquare, I’ll be learning the end-to-end process of creating a full-stack web application, from inception to production!
+
+This project is inspired by Bash Mohandes Yasser Elsayed's LinkedIn profile and his YouTube playlist.
