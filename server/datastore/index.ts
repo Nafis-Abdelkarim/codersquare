@@ -8,7 +8,6 @@ import { SqlDataStore } from "./sql";
 // Define the Datastore interface
 export interface Datastore extends UserDao, PostDao, LikeDao, CommentDao {}
 
-// Export `db` so it can be used in other modules
 export let db: Datastore;
 
 export async function initDb() {
