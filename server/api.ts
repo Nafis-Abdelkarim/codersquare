@@ -1,4 +1,4 @@
-import { Post } from "./types";
+import { Post, User } from "./types";
 //Post APIs
 
 export interface ListPostRequest {}
@@ -12,3 +12,12 @@ export interface GetPostRequest {}
 export interface GetPostResponse {
     post: Post;
 }
+
+export type SignUpRequest = Pick<User, 'email' | 'firstName' | 'lastName' | 'userName' | 'password'>;
+export interface SignUpResponse {}
+
+export interface SignInRequest {
+    login: string; // username or password
+    password: string;
+}
+export type SignInResponse = Pick<User, 'email' | 'firstName' | 'lastName' | 'userName' | 'Id'>;
